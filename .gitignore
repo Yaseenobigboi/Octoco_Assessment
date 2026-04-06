@@ -1,4 +1,7 @@
 bookstore-api/node_modules/
 bookstore-api/dist/
 
+crypto-app/node_modules/
+crypto-app/dist/
+
 DEV_NOTES.md
