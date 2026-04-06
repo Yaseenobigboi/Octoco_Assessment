@@ -31,7 +31,7 @@ export function getDiscountedPrice(genre: string, discountPercentage: number): n
 
   let total = 0;
   for (let i = 0; i < books.length; i++) {
-    total = books[i].price;
+    total = total + books[i].price;
   }
 
   const discountAmount = (discountPercentage / 100) * total;
