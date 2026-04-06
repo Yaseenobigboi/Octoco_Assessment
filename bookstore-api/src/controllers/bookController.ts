@@ -10,7 +10,7 @@ export function getAllBooks(req: Request, res: Response): void {
 }
 
 export function getBookById(req: Request, res: Response): void {
-  const id = parseInt(req.params.id);
+  const id = parseInt(req.params.id as string);
   const book = bookService.getBookById(id);
 
   if (!book) {
@@ -28,7 +28,7 @@ export function createBook(req: Request, res: Response): void {
 }
 
 export function updateBook(req: Request, res: Response): void {
-  const id = parseInt(req.params.id);
+  const id = parseInt(req.params.id as string);
   const { title, author, genre, price } = req.body;
   const book = bookService.updateBook(id, { title, author, genre, price });
 
@@ -41,7 +41,7 @@ export function updateBook(req: Request, res: Response): void {
 }
 
 export function deleteBook(req: Request, res: Response): void {
-  const id = parseInt(req.params.id);
+  const id = parseInt(req.params.id as string);
   const deleted = bookService.deleteBook(id);
 
   if (!deleted) {
