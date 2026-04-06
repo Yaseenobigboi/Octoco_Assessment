@@ -25,28 +25,30 @@ function CoinDetail() {
 
   if (error) {
     return (
-      <div>
-        <button onClick={function () { navigate('/') }}>Back</button>
+      <div className="page">
+        <button className="back-button" onClick={function () { navigate('/') }}>Back</button>
         <p>{error}</p>
       </div>
     )
   }
 
   if (!coin) {
-    return <div>Loading...</div>
+    return <div className="page">Loading...</div>
   }
 
   return (
-    <div>
-      <button onClick={function () { navigate('/') }}>Back</button>
+    <div className="page">
+      <button className="back-button" onClick={function () { navigate('/') }}>Back</button>
 
-      <div>
+      <div className="coin-header">
         <img src={coin.image.large} alt={coin.name} width="64" height="64" />
-        <h1>{coin.name} ({coin.symbol.toUpperCase()})</h1>
-        <p>Rank #{coin.market_cap_rank}</p>
+        <div>
+          <h1>{coin.name} ({coin.symbol.toUpperCase()})</h1>
+          <p>Rank #{coin.market_cap_rank}</p>
+        </div>
       </div>
 
-      <table>
+      <table className="detail-table">
         <tbody>
           <tr>
             <td>Current Price</td>

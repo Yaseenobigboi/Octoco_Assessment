@@ -1,6 +1,6 @@
 # Crypto App
 
-A React + TypeScript app that displays live cryptocurrency prices using the CoinGecko API.
+A React + TypeScript app that displays live cryptocurrency prices using the CoinGecko API. All prices are shown in ZAR (South African Rand).
 
 ## Requirements
 
@@ -12,6 +12,7 @@ A React + TypeScript app that displays live cryptocurrency prices using the Coin
 ### 1. Install dependencies
 
 ```bash
+cd crypto-app
 npm install
 ```
 
@@ -25,12 +26,28 @@ The app will open at http://localhost:5173
 
 ## Pages
 
-| Page | URL | Description |
-|------|-----|-------------|
-| Dashboard | `/` | Top 10 cryptocurrencies by market cap |
-| Coin Detail | `/coin/:id` | Detailed info for a selected coin |
+### Dashboard (`/`)
+- Shows the top 10 cryptocurrencies ranked by market cap (highest to lowest)
+- Each row displays: rank, name, symbol, current price (ZAR), market cap (ZAR), 24h price change
+- Click any row to go to that coin's detail page
 
-## Notes
+### Coin Detail (`/coin/:id`)
+- Shows full details for the selected coin
+- Displays: current price, market cap, 24h change, circulating supply, total supply, all-time high, all-time low
+- Back button returns to the dashboard
 
-- All prices are displayed in ZAR (South African Rand)
-- Data is fetched live from the [CoinGecko API](https://www.coingecko.com/en/api)
+## Project Structure
+
+```
+src/
+  api/
+    coingecko.ts      # all CoinGecko API calls
+  pages/
+    Dashboard.tsx     # top 10 coins list
+    CoinDetail.tsx    # single coin detail view
+  types/
+    coin.ts           # TypeScript types for API data
+  App.tsx             # router setup
+  main.tsx            # app entry point
+  index.css           # global styles
+```

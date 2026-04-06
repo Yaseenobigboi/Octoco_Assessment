@@ -20,15 +20,15 @@ function Dashboard() {
   }, [])
 
   if (error) {
-    return <div>{error}</div>
+    return <div className="page">{error}</div>
   }
 
   if (!coins) {
-    return <div>Loading...</div>
+    return <div className="page">Loading...</div>
   }
 
   return (
-    <div>
+    <div className="page">
       <h1>Top 10 Cryptocurrencies</h1>
       <table>
         <thead>

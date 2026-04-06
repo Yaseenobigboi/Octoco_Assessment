@@ -1,2 +1,72 @@
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: sans-serif; background: #f5f5f5; color: #333; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background: #f5f5f5;
+  color: #333;
+}
+
+/* centres everything and keeps it from stretching too wide */
+.page {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+/* dashboard table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background: #f0f0f0;
+  font-weight: bold;
+}
+
+/* highlight row on hover so it's obvious they're clickable */
+tbody tr:hover {
+  background: #e8f0fe;
+  cursor: pointer;
+}
+
+/* coin detail header */
+.coin-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.coin-header h1 {
+  margin-bottom: 4px;
+}
+
+/* back button */
+.back-button {
+  margin-bottom: 20px;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+
+/* detail table — label column is narrower */
+.detail-table td:first-child {
+  width: 200px;
+  color: #666;
+}
+
