@@ -1,11 +1,17 @@
-// this must be the root component - it will hold the router and any shared layout
+// this must be the root component - it sets up the router and maps URLs to pages
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Dashboard from './pages/Dashboard'
+import CoinDetail from './pages/CoinDetail'
 import './App.css'
 
 function App() {
   return (
-    <div>
-      <h1>Crypto App</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/coin/:id" element={<CoinDetail />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
