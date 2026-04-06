@@ -87,3 +87,28 @@ export function deleteBook(req: Request, res: Response): void {
 
   res.status(200).json({ message: 'Book deleted' });
 }
+
+export function getDiscountedPrice(req: Request, res: Response): void {
+  const genre = req.query.genre as string;
+  const discount = req.query.discount as string;
+
+  if (!genre || !discount) {
+    res.status(400).json({ message: 'genre and discount are required' });
+    return;
+  }
+
+  const discountNumber = parseFloat(discount);
+
+  if (isNaN(discountNumber) || discountNumber < 0 || discountNumber > 100) {
+    res.status(400).json({ message: 'discount must be a number between 0 and 100' });
+    return;
+  }
+
+  const total = bookService.getDiscountedPrice(genre, discountNumber);
+
+  res.status(200).json({
+    genre: genre,
+    discount_percentage: discountNumber,
+    total_discounted_price: total,
+  });
+}
