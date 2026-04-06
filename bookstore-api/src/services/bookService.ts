@@ -1,6 +1,6 @@
 // this service should:
 // - receive calls from the controller
-// - handle business logic (like calculating discounts)
+// - handle business logic
 // - call the repository to get or save data
 
 import { Book } from '../types/book';
